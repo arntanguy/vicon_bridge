@@ -1,0 +1,15 @@
+Add this function to your .bashrc file.
+It will allow to connect to both the robot and vicon networks simulatneously
+
+```
+function hrp4_vicon_network
+{
+    sudo ifconfig eth0 10.4.5.42 netmask 255.255.255.0
+      sudo ifconfig eth0:1 192.168.10.42 netmask 255.255.254.0
+}
+```
+
+Then run
+```
+roslaunch vicon_bridge vicon_lirmm.launch
+```
